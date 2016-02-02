@@ -1,2 +1,3 @@
 caption always '%{.bW}%-w%{.rW}%n %t%{-}%+w %= %{..W}[%l] %{..G}%2`@%H %{..Y} %D %d/%m/%Y %c'
 startup_message off
+term screen-256color
