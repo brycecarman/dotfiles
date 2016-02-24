@@ -8,12 +8,35 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
+" Enable file-type specific formatting
+filetype plugin indent on
+
+" Allow changing buffers without first saving
+set hidden
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use syntax highlighting
 syntax enable
