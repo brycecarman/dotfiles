@@ -20,3 +20,4 @@ BoldWhite=253,246,227
 CursorType=block
 Font=Powerline Consolas
 BoldAsFont=no
+FontHeight=10
