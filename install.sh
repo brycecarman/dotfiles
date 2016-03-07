@@ -35,8 +35,20 @@ link_file () {
 }
 
 main () {
-  link_file 'minttyrc'
-  link_file 'startxwinrc'
+
+  case "$(uname -s)" in
+    Darwin)
+    ;;
+
+    Linux)
+    ;;
+
+    CYGWIN*)
+      link_file 'minttyrc'
+      link_file 'startxwinrc'
+    ;;
+  esac
+
   echo "Successfully finished install"
 }
 
