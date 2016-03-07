@@ -21,3 +21,4 @@ CursorType=block
 Font=Powerline Consolas
 BoldAsFont=no
 FontHeight=11
+Term=xterm-256color
