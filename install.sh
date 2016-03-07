@@ -44,6 +44,7 @@ main () {
     ;;
 
     CYGWIN*)
+      link_file 'dircolors'
       link_file 'minttyrc'
       link_file 'startxwinrc'
     ;;
