@@ -43,7 +43,7 @@ main () {
     Linux)
       link_file 'dircolors'
       link_file 'tmux.conf'
-      link_file 'vimrc'
+      #link_file 'vimrc'
     ;;
 
     CYGWIN*)
