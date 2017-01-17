@@ -17,6 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,16 +36,37 @@ filetype plugin indent on
 " Allow changing buffers without first saving
 set hidden
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Each indentation level is four spaces. Tabs are not used.
 set softtabstop=4 shiftwidth=4 expandtab
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" highlight trailing whitespace
+autocmd FileType c,cpp,vim let w:m2=matchadd('Search', '\s\+$', -1)
+" let's test it here:        
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Searching
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Ignore case when searching
+set ignorecase
+
+"case-sensitive if search contains an uppercase character
+set smartcase
+
+"Highlight search things
+set hlsearch
+
+"Make search act like search in modern browsers
+"set incsearch
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use syntax highlighting
 syntax enable
 
@@ -53,7 +75,7 @@ set laststatus=2
 
 " Always display the tabline, even if there is only one tab
 set showtabline=2
- 
+
 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noshowmode
 
@@ -61,4 +83,7 @@ set background=dark
 colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
