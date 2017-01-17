@@ -8,11 +8,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -38,14 +36,17 @@ filetype plugin indent on
 set hidden
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Each indentation level is four spaces. Tabs are not used.
+set softtabstop=4 shiftwidth=4 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use syntax highlighting
 syntax enable
-
-" Show line numbers
-"set number
 
 " Always display the statusline in all windows
 set laststatus=2
@@ -57,12 +58,7 @@ set showtabline=2
 set noshowmode
 
 set background=dark
-"let g:solarized_termcolors=256
 colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
-
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
 
