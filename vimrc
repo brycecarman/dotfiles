@@ -9,10 +9,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,6 +46,7 @@ set softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType c,cpp,vim let w:m2=matchadd('Search', '\s\+$', -1)
 " let's test it here:        
 
+set backspace=indent,eol,start
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searching
@@ -63,6 +63,10 @@ set hlsearch
 "Make search act like search in modern browsers
 "set incsearch
 
+"Ignore intermediate files for glob operations. Also used
+"by the ctrlp plugin when searching for files.
+set wildignore+=*.o,*.d
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -73,16 +77,11 @@ syntax enable
 " Always display the statusline in all windows
 set laststatus=2
 
-" Always display the tabline, even if there is only one tab
-set showtabline=2
-
-" Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set noshowmode
+" Shows line number and column
+set ruler
 
 set background=dark
 colorscheme solarized
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
