@@ -1,20 +1,21 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+" Initialize Vundle
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Vundle managed plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'fatih/vim-go'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/a.vim'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 
@@ -43,11 +44,28 @@ set hidden
 " Each indentation level is four spaces. Tabs are not used.
 set softtabstop=4 shiftwidth=4 expandtab
 
-" highlight trailing whitespace
-autocmd FileType c,cpp,vim let w:m2=matchadd('Search', '\s\+$', -1)
-" let's test it here:        
-
 set backspace=indent,eol,start
+
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Searching
@@ -62,17 +80,12 @@ set smartcase
 set hlsearch
 
 "Make search act like search in modern browsers
-"set incsearch
+set incsearch
 
 "Ignore intermediate files for glob operations. Also used
 "by the ctrlp plugin when searching for files.
 set wildignore+=*.o,*.d
 
-" The Silver Searcher
-if executable('ag')
-    " Use ag over grep
-    set grepprg=ag\ --vimgrep
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -80,14 +93,15 @@ endif
 " Use syntax highlighting
 syntax enable
 
-" Always display the statusline in all windows
-set laststatus=2
-
-" Shows line number and column
-set ruler
-
 set background=dark
 colorscheme solarized
+let g:airline_theme='solarized'
+
+" Enable spell checking in git commits
+autocmd Filetype gitcommit setlocal spell
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
