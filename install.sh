@@ -12,7 +12,7 @@ link_file () {
   local target="${PWD}/${name}"
   local link_name="${HOME}/.${name}"
 
-  # Check if the link already exists to see if it already points to the currect
+  # Check if the link already exists to see if it already points to the current
   # target already of if it should be backed-up
   if [[ -e "${link_name}" ]]; then
 
@@ -34,23 +34,33 @@ link_file () {
   fi
 }
 
+configure_vim () {
+  if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  else
+    echo "Updating ~/.vim/bundle/Vundle.vim..."
+    pushd ~/.vim/bundle/Vundle.vim > /dev/null
+    git pull
+    popd > /dev/null
+  fi
+
+  #link_file 'vimrc'
+  vim +PluginInstall +qall
+}
+
 main () {
+  configure_vim
 
   case "$(uname -s)" in
     Darwin)
     ;;
 
     Linux)
-      link_file 'dircolors'
-      link_file 'tmux.conf'
+      #link_file 'dircolors'
+      #link_file 'tmux.conf'
       #link_file 'vimrc'
     ;;
 
-    CYGWIN*)
-      link_file 'dircolors'
-      link_file 'minttyrc'
-      link_file 'startxwinrc'
-    ;;
   esac
 
   echo "Successfully finished install"
