@@ -49,6 +49,7 @@ configure_vim () {
 }
 
 main () {
+  link_file 'tmux.conf'
   configure_vim
 
   case "$(uname -s)" in
@@ -57,8 +58,6 @@ main () {
 
     Linux)
       #link_file 'dircolors'
-      #link_file 'tmux.conf'
-      #link_file 'vimrc'
     ;;
 
   esac
