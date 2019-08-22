@@ -44,7 +44,7 @@ configure_vim () {
     popd > /dev/null
   fi
 
-  #link_file 'vimrc'
+  link_file 'vimrc'
   vim +PluginInstall +qall
 }
 
