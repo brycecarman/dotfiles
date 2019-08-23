@@ -46,7 +46,7 @@ set softtabstop=4 shiftwidth=4 expandtab
 set backspace=indent,eol,start
 
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
+"
 "au BufNewFile,BufRead *.py
 "    \ set tabstop=4
 "    \ set softtabstop=4
@@ -55,15 +55,15 @@ set backspace=indent,eol,start
 "    \ set expandtab
 "    \ set autoindent
 "    \ set fileformat=unix
-
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+"
+"au BufNewFile,BufRead *.js, *.html, *.css
+"    \ set tabstop=2
+"    \ set softtabstop=2
+"    \ set shiftwidth=2
+"
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+"
+"autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
