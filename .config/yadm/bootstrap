@@ -4,9 +4,9 @@ system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
 
-  if [ -f "$HOME/.Brewfile" ]; then
+  if [ -f "$HOME/.config/yadm/Brewfile" ]; then
     echo "Updating homebrew bundle"
-    brew bundle --global
+    brew bundle --file="$HOME/.config/yadm/Brewfile"
   fi
 
 fi
