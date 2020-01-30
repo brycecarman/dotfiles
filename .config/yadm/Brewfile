@@ -1,3 +1,6 @@
 brew "python3", link: true
+
+brew "curl"
 brew "git"
 brew "shellcheck"
+brew "wget"
