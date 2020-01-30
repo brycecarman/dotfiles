@@ -14,5 +14,17 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --file="$HOME/.config/yadm/Brewfile"
   fi
 
+  set +e
+  grep -qxF '/usr/local/bin/bash' /etc/shells
+  retval=$?
+  set -e
+  if [ $retval -ne 0 ]; then
+    echo "Adding Bash to allowed shells"
+    echo "/usr/local/bin/bash" | sudo tee -a /etc/shells > /dev/null
+  fi
+  if [ "$SHELL" != "/usr/local/bin/bash" ]; then
+    chsh -s /usr/local/bin/bash
+  fi
+
 fi
 

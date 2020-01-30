@@ -1,6 +1,7 @@
-brew "python3", link: true
-
+brew "bash"
 brew "curl"
 brew "git"
+brew "python3", link: true
 brew "shellcheck"
 brew "wget"
+brew "yadm"
