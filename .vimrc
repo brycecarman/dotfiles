@@ -8,6 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle managed plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sheerun/vim-polyglot'
@@ -85,6 +87,7 @@ set incsearch
 "by the ctrlp plugin when searching for files.
 set wildignore+=*.o,*.d
 
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|coverage)$'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
