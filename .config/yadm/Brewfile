@@ -6,5 +6,6 @@ brew "curl"
 brew "git"
 brew "python3", link: true
 brew "shellcheck"
+brew "the_silver_searcher"
 brew "wget"
 brew "yadm"
