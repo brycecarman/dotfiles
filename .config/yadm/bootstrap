@@ -28,3 +28,12 @@ if [ "$system_type" = "Darwin" ]; then
 
 fi
 
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "Updating ~/.vim/bundle/Vundle.vim..."
+  pushd ~/.vim/bundle/Vundle.vim > /dev/null
+  git pull
+  popd > /dev/null
+fi
+vim -E -u NONE -S ~/.vimrc +PluginInstall +qall > /dev/null

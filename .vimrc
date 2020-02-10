@@ -96,8 +96,11 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|coverage)$'
 syntax enable
 
 set background=dark
-colorscheme solarized
 let g:airline_theme='solarized'
+let solarized_readme=expand('.vim/bundle/vim-colors-solarized/README.mkd')
+if filereadable(solarized_readme)
+  colorscheme solarized
+endif
 
 " Enable spell checking in git commits
 autocmd Filetype gitcommit setlocal spell
