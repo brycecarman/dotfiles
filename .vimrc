@@ -97,7 +97,7 @@ syntax enable
 
 set background=dark
 let g:airline_theme='solarized'
-let solarized_readme=expand('.vim/bundle/vim-colors-solarized/README.mkd')
+let solarized_readme=expand('$HOME/.vim/bundle/vim-colors-solarized/README.mkd')
 if filereadable(solarized_readme)
   colorscheme solarized
 endif
