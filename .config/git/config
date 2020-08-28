@@ -8,9 +8,9 @@
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 	adog = log --graph --decorate --all --oneline
 	sadog = log --graph --decorate --all --oneline -20
-
 [pull]
 	rebase = merges
-
+[commit]
+	cleanup = scissors
 [include]
 	path = config.local
