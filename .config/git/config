@@ -14,3 +14,5 @@
 	cleanup = scissors
 [include]
 	path = config.local
+[init]
+	defaultBranch = main
