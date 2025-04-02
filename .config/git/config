@@ -1,8 +1,39 @@
-[init]
-	defaultBranch = main
+#
+# This file is automatically merged in with any git config in ~/.gitconfig
+#
+
 [alias]
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 	adog = log --graph --decorate --all --oneline
 	sadog = log --graph --decorate --all --oneline -20
 	find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
 	show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+[branch]
+	sort = -committerdate # Sort branches when listing by commiter date instead of alphabetical
+[column]
+	ui = auto # Show listings in column format
+[commit]
+	verbose = true  # Add diff in commit message output
+[core]
+	fsmonitor = true  # Run a monitor process for each repo to improve performance
+	untrackedCache = true
+[diff]
+	algorithm = histogram  # Better grouping of changes in diffs
+	colorMoved = plain  # Use different color for code moves
+	mnemonicPrefix = true  # Use mnemonics for diff file names i->index w->working
+	renames = true  # Detect when files have been renamed
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = zdiff3  # Add original text in conflict resolution text
+[pull]
+	rebase = true  # Automatically rebase on pull
+[push]
+	autoSetupRemote = true  # Automatically create branches on push
+	default = simple  # Push to remote using same branch name (default since 2.0)
+[tag]
+	sort = version:refname # Sort tags as version strings
