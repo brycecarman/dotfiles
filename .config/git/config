@@ -10,8 +10,6 @@
 	show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [branch]
 	sort = -committerdate # Sort branches when listing by commiter date instead of alphabetical
-[column]
-	ui = auto # Show listings in column format
 [commit]
 	verbose = true  # Add diff in commit message output
 [core]
