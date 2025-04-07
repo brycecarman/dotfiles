@@ -12,9 +12,9 @@
 	sort = -committerdate # Sort branches when listing by commiter date instead of alphabetical
 [commit]
 	verbose = true  # Add diff in commit message output
-[core]
-	fsmonitor = true  # Run a monitor process for each repo to improve performance
-	untrackedCache = true
+#[core]
+#	fsmonitor = true  # Run a monitor process for each repo to improve performance
+#	untrackedCache = true
 [diff]
 	algorithm = histogram  # Better grouping of changes in diffs
 	colorMoved = plain  # Use different color for code moves
